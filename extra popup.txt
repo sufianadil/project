@@ -1,0 +1,158 @@
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #FFFFFF;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.modal-body {padding: 2px 16px;}
+.modal-content select {
+    display: block !important;
+}
+.modal-content .nice-select {
+    display: none;
+}
+
+</style>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    
+    <div class="modal-body">
+	  <span class="close">&times;</span>
+	   <form action="" method="post" enctype="multipart/form-data" >
+    <h1> PLACE YOUR ADD </h1>
+
+    <label for="Category"><b>Category Name</b></label><br>
+	<select id="cat_id" name="cat_id" />
+	<option value="<?php if($action=="update") echo $row["cat_id"];?>"><?php if($action=="update") echo $row["cat_id"]; else{echo "SELECT";} ?>
+	</option>
+	</select>
+	<br>
+    <label for="Sub Category"><b>Sub Category Name</b></label><br>
+	<select id="sub_cat_id" name="sub_cat_id" />
+	<option value="<?php if($action=="update") echo $row["sub_cat_id"];?>"><?php if($action=="update") echo $row["sub_cat_id"]; else{echo "SELECT";} ?>
+	</option>
+	</select>
+	<br>
+	<label for="pro Name"><b>Product Name</b></label><br>
+	<input name="product_name" id="product_name" type="text" value="" >
+	<br>
+	<label for="Pro Des"><b>Product Description</b></label><br>
+	<textarea name="product_description" id="product_description" rows="10" cols="40"> </textarea>
+	<br>
+	<label for="Pro price"><b>Product Price</b></label><br>
+	<input name="product_price" type="text" value="" >
+	<br>
+	<label for="date"><b>Date</b></label>
+	<br>
+	<input name="date" type="date" value="" >
+	<br>
+	<label for="location"><b>Location</b></label>
+	<br>
+	<input name="location" type="location" value="" >
+	<br>
+	<label for="status"><b>Status</b></label>
+	<br>
+	<input name="status" type="checkbox" value="1" > Active/Not Active
+	<br>
+	<label for="Image"><b>Product Image</b></label>
+	<br>
+	<input name="file" id="file" type="file" value="" multiple>
+	<br><br>
+    
+	<button type="submit" name="submit" id="submit" class="btn">Submit</button>  
+  </form>
+    </div>
+    
+  </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
