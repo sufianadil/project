@@ -1,9 +1,9 @@
 
 <?php
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
+$servername = 'mycourse.mysql.database.azure.com';
+$username = 'sufi';
+$password = 'lovE@1234';
 $dbname = 'classpro';
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 
