@@ -1,7 +1,7 @@
 
 <?php
 
-$servername = 'mycourseworkscaleable.azurewebsites.net';
+$servername = 'mycourse.mysql.database.azure.com';
 $username = 'sufi';
 $password = 'lovE@1234';
 $dbname = 'classpro';
